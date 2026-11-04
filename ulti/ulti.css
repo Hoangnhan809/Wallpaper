@@ -163,5 +163,5 @@
 .zoomAndFade {
   will-change: transform;
   backface-visibility: hidden;
-  animation: zoomAndFade 1s ease-in-out 7.8s;
+  animation: zoomAndFade 0.8s linear 8s forwards;
 }

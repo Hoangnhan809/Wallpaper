@@ -7,7 +7,7 @@ ulti.style.setProperty("--posY", posY);
 
 setTimeout(() => {
     ulti.style.visibility = "visible";
-}, Math.random() *135000 + 45000);
+}, Math.random() *1350 + 450);
 
 ulti.addEventListener("click", () => {
     ulti.classList.add("disappear");
@@ -30,18 +30,22 @@ ulti.addEventListener("click", () => {
     ultidiv.style.left = "50%";
     ultidiv.style.transform = "translate(-50%, -50%)";
     ultidiv.style.position = "absolute";
-    ultidiv.style.width = "100%";
-    ultidiv.style.height = "100%";
+    ultidiv.style.width = "100vw";
+    ultidiv.style.height = "100vh";
     ultidiv.style.display = "flex";
     ultidiv.style.justifyContent = "center";
     ultidiv.style.alignItems = "center";
+    ultidiv.style.overflow = "hidden";
 
     const ultivid = document.createElement("video");
     ultivid.src = "../resources/ulti1.mp4";
     ultivid.autoplay = true;
     ultivid.loop = false;
     ultivid.muted = true;
+    ultivid.style.objectFit = "cover";
     ultivid.style.position = "absolute";
+    ultivid.style.width = "100%";
+    ultivid.style.height = "100%";
 
     setTimeout(() => {
         document.body.appendChild(ultidiv);
@@ -55,6 +59,7 @@ ulti.addEventListener("click", () => {
     }, 3650);
 
     setTimeout(() => {
+        ultidiv.classList.remove("zoomAndFade");
         ultivid.src = "../resources/ulti2.mp4";
         setTimeout(() => {
             coating.classList.remove("coating2");
