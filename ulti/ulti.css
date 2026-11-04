@@ -1,0 +1,167 @@
+.ulti {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  left: var(--posX);
+  top: var(--posY);
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  animation: moving 5s ease-in-out infinite;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.ultipic {
+  width: 64px;
+  height: 109px;
+  z-index: 2;
+  background-image: url("../resources/ulti.png");
+  background-size: cover;  
+  background-position: center; 
+  background-repeat: no-repeat;
+  border-radius: 15%;
+}
+
+.rays {
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(0, 0, 0, 0) 0deg,
+    rgba(0, 0, 0, 0) 18deg,
+    rgba(202, 191, 73, 0.266) 18deg,
+    rgba(202, 191, 73, 0.266) 36deg
+  );
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
+  animation: rays 16s linear infinite;
+}
+
+@keyframes rays {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* disappear Animation */
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.disappear {
+  animation: disappear 0.8s ease-in-out forwards;
+}
+
+/* for coating only*/
+@keyframes coating1 {
+  0% {
+    top: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 25%,
+        rgb(0, 0, 0) 75%,
+        rgba(0, 0, 0, 0) 100%
+      );
+  }
+  100% {
+    top: -200%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 25%,
+        rgb(0, 0, 0) 75%,
+        rgba(0, 0, 0, 0) 100%
+      );
+  }
+}
+
+.coating1 {
+  animation: coating1 3s ease 0.8s;
+}
+
+@keyframes coating2 {
+  0% {
+    background-color: rgba(255,255,255,0);
+    top:0%;
+  }
+  30% {
+    background-color: rgba(255, 255, 255, 1);
+    top:0%;
+  }
+  70% {
+    background-color: rgba(254, 254, 202, 1);
+    top:0%;
+  }
+  100% {
+    background-color: rgba(254, 254, 202, 0);
+    top:0%;
+  }
+}
+
+.coating2 {
+  animation: coating2 2.5s linear 6s;
+}
+
+@keyframes coating3{
+  0% {
+    background-color: rgba(255, 255, 255, 1);
+    top:0%;
+  }
+  100% {
+    background-color: rgba(254, 254, 202, 0);
+    top:0%;
+  }
+}
+
+.coating3 {
+  animation: coating3 3s linear 4.25s;
+}
+
+/* for video only*/
+@keyframes zoomAndFade {
+  0% {
+    top: 0;
+    left: 0;
+    transform: scale(1) translate(0, 0) perspective(1000px);
+    transform-origin: 50% 20%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: scale(4) translate(0, 0) perspective(1000px);
+    transform-origin: 50% 20%;
+  }
+}
+
+.zoomAndFade {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: zoomAndFade 1s ease-in-out 7.8s;
+}

@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+div {
+    font-family: "Fleur De Leah", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+div span {
+    display: inline-block;
+    min-height: 1.2em;
+}
+
+#left {
+    position: absolute;
+    height: 30vh;
+    width: 40vw;
+    left: 3vw;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+#right {
+    position: absolute;
+    height: 30vh;
+    width: 40vw;
+    left: 72vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* particle Animation */
+@keyframes particle {
+    0% {
+        transform: translate(0, 0) scale(0);
+    }
+    50% {
+        transform: translate(calc(var(--dirX) * 0.5), calc(var(--dirY) * 0.5)) scale(1);
+    }
+    100% {
+        transform: translate(var(--dirX), var(--dirY)) scale(0);
+    }
+}
+
+.particle {
+    object-fit: cover;
+    animation: particle 690ms linear forwards;
+    color: rgba(255, 255, 255, 0.45);
+    filter: brightness(0.8);
+}
+/* pulse Animation */
+@keyframes pulse {
+    0% {
+        color: rgba(255, 255, 255, 0.45);
+    }
+    25% {
+        color: rgba(255, 255, 255, 1);
+        filter: brightness(2.5);
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.45);
+    }
+}
+
+.pulse {
+    animation: pulse var(--pt) ease-in-out forwards;
+}
+
+/* fade Animation */
+@keyframes fade {
+    0% {
+        color: rgba(255, 255, 255, 0.45);
+        filter: brightness(1);
+        text-shadow: none;
+    }
+    40% {
+        color: rgba(255, 255, 255, 1);
+        filter: brightness(2.5);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 
+                     0 0 40px rgba(255, 255, 255, 0.75), 
+                     0 0 50px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+    
+        color: rgba(255, 255, 255, 0);
+        filter: brightness(1);
+        text-shadow: none;
+    }
+}
+
+.fade {
+    animation: fade 1.2s ease-in-out forwards;
+}
+
+/*fadeshadow animation*/
+@keyframes fadeshadow {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+    40% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 
+                     0 0 40px rgba(255, 255, 255, 0.75), 
+                     0 0 50px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+.fadeshadow{
+    animation: fadeshadow 1.2s ease-in-out forwards;
+}
