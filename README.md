@@ -1,4 +1,4 @@
-#DRUVIS WEYERHAUSER III WALLPAPER
+DRUVIS WEYERHAUSER III WALLPAPER
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **An unostentatious opusculum, wrought to consummate my yearning to prize Miss Druvis Weyerhauser III.**
 
