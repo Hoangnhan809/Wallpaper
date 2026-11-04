@@ -7,7 +7,7 @@ ulti.style.setProperty("--posY", posY);
 
 setTimeout(() => {
     ulti.style.visibility = "visible";
-}, Math.random() *1350 + 450);
+}, Math.random() *135000 + 45000);
 
 ulti.addEventListener("click", () => {
     ulti.classList.add("disappear");
